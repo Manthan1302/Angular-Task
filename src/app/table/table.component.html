@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Comapny Name</th>
+                <th>Comapny Gst</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let item of list">
+                <td >{{item.ComapnyName}}</td>
+                <td >{{item.CompanyGst}}</td>
+                <td ><button (click)="deleteComapny(item.ComapnyName)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
