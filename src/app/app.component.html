@@ -6,14 +6,15 @@
   <title>Company Data</title>
 </head>
 <body>
-  <form>
+  <form #basicForm="ngForm" (ngSubmit)="createCompany(basicForm)">
     
-    <label>Comapny  Name</label><input  type="text" name="cname" #name/>
-    <label>Comapny  Gst</label><input  type="text" name="cgst" #gst/>
-    <button (click)="createCompany(name.value,gst.value)">Add Data</button>
+    <label>Comapny  Name</label><input  type="text" ngModel name="cname" #name/>
+    <label>Comapny  Gst</label><input  type="text" ngModel name="cgst" #gst/>
+    <button >Add Data</button>
   </form>
   <br>
   <br>
-  <app-table [list]="compayList"></app-table>
+  <app-table *ngFor="let complany of compayList"
+  [listElement]="complany"></app-table>
 </body>
 </html>

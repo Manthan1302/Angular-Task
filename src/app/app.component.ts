@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {NgForm} from "@angular/forms";
-import { Company} from "./Company"
+import { NgForm } from "@angular/forms";
+import { Company } from "./Company"
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,15 +11,12 @@ import { Company} from "./Company"
 
 export class AppComponent {
   title = 'company-crud';
-  compayList:Company[]=[]
-  createCompany(cname:string,cgst:string){
-   
-
-    console.log(cname);
-    console.log(cgst);
-
+  compayList = [{cname:"man",cgst:"asd"}]
+  createCompany(data:NgForm) {
+    console.log(data);
     
-    this.compayList.push({"ComapnyName":cname,"CompanyGst":cgst})
+    this.compayList.push({ 
+      cname: data.form.value.cname, cgst: data.form.value.cgst})
     console.log(this.compayList);
   }
 }

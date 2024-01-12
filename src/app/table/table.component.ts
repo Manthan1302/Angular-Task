@@ -8,7 +8,8 @@ import { Company } from "../Company"
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  @Input() list: Company[] = []
+  @Input("listElement") 
+  list!:{cname:string,cgst:string};
 
   constructor() {
   }
@@ -16,14 +17,14 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteComapny(ComapnyName: string) {
-    console.log(ComapnyName);
+  // deleteComapny(ComapnyName: string) {
+  //   console.log(ComapnyName);
 
-    let index = this.list.findIndex(ele => ele.ComapnyName === ComapnyName);
-    console.log(index);
-    if (index !== -1) {
-      this.list
-    }
+  //   let index = this.list.findIndex(ele => ele.cname === ComapnyName);
+  //   console.log(index);
+  //   if (index !== -1) {
+  //     this.list
+  //   }
 
-  }
+  // }
 }
